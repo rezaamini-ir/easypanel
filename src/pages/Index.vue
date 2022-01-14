@@ -1,5 +1,5 @@
 <template>
-  <Layout :sidebar="false">
+  <Layout :sidebar="true">
     <div class="content">
       <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
       <nav>
