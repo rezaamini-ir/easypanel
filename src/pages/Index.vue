@@ -2,6 +2,7 @@
   <Layout :sidebar="true">
     <div class="content">
       <Doc />
+      <p>Hello, form test</p>
     </div>
   </Layout>
 </template>
@@ -19,8 +20,7 @@ import Doc from '~/templates/Doc.vue'
 
 export default {
   components: {
-    GitLink,
-    Shortcut
+    Doc
   },
   data() {
     return {
