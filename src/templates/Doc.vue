@@ -36,6 +36,7 @@ export default {
 <style lang="scss" scoped>
 /deep/ > p {
   opacity: .8;
+  font-size: 1.1rem;
 }
 
 /deep/ > h2, /deep/ > h3, /deep/ > h4, /deep/ > h5, /deep/ > h6 {

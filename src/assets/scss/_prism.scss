@@ -20,7 +20,7 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-	padding: 30px;
+	padding: 20px;
 	margin: 2em 0;
 	overflow: auto;
 	border-radius: 5px;
@@ -30,6 +30,7 @@ pre[class*="language-"] {
 	padding: .25em;
 	border-radius: .3em;
 	white-space: normal;
+    color: #7674EA !important;
 }
 
 .token.comment,
