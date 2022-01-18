@@ -1,5 +1,5 @@
 <template>
-  <a href="https://github.com/rezaamini-ir/laravel-easypanel" :class="size" title="Git-repository" aria-label="Jamdocs on Github">
+  <a target="_blank" href="https://github.com/rezaamini-ir/laravel-easypanel" :class="size" title="Git-repository" aria-label="EasyPanel on Github">
     <github-icon class="icon" />
     {{text}}
   </a>
