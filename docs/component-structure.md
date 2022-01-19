@@ -15,6 +15,7 @@ slug: component-structure
     - [Inputs](#inputs)
     - [Validation](#validation)
     - [Store Files](#store-files)
+- [Build CRUD](#build-crud)
 
 ## What is the component
 Components in EasyPanel are the classes which have been located in `app/CRUD` directory, and You can manage your CRUDs with editing these components!
@@ -107,7 +108,8 @@ In behind scene, It will use `wire:model.lazy` instead of `wire:model`.
 
 #### Disable Searching
 
-To turn searching off, You can return an empty array in `searchable()` method:
+To turn searching feature off, You can return an empty array in `searchable()` method:
+
 ```php
 public function searchange(){
     return [];
@@ -119,7 +121,8 @@ We have documented a lot about Inputs in [Inputs Page](/inputs).
 
 ### Validation
 Validation rules in EasyPanel components uses the [default validation in Laravel](https://laravel.com/docs/master/validation).
-To use validation you need to return an array with key and values in `validationRules()` method in CRUD component:
+To use validation you need to return an array with keys and values in `validationRules()` method in CRUD component:
+
 ```php
 public function validationRules()
 {
@@ -134,7 +137,7 @@ public function validationRules()
 
 ### Store Files
 
-If you use inputs with file type, You may be wondering how can you change the path of store method?
+If you use inputs with file type, You may be wondering how can you change the path of the store method?
 
 It's really easy in EasyPanel:
 ```php
@@ -154,3 +157,31 @@ $this->profile->store('photos/profile-photo');
 The `store()` method belong to Livewire, [Read more about store()](https://laravel-livewire.com/docs/2.x/file-uploads#basic-upload).
 
 **The key must be equal to the input key.**
+
+## Build CRUD
+When you make the CRUD Component customize based on your needs.
+You need to build or rebuild the CRUD on `CRUD Manager` Page.
+
+It will create 2 new directories for your project in `app/Http/Livewire/Admin` and `resources/views/livewire/admin/` with the name of your model!
+
+These 2 folders contain CRUD components, and you can customize them based on your needs.
+
+For example, if our model is `Article` we will have these components:
+
+```
+app/Http/Livewire/Admin/Article:
+│─── Create.php
+│─── Read.php 
+│─── Single.php 
+│─── Update.php 
+
+resources/views/livewire/admin/article:
+│─── create.blade.php
+│─── read.blade.php 
+│─── single.blade.php 
+│─── update.blade.php 
+```
+
+Be careful, when you rebuild a CRUD all components will be rebuilt again, and every custom changes will be removed!
+
+**Any changes in validationRules(), storePaths(), inputs(), fields() and getModel() need rebuilt!**
