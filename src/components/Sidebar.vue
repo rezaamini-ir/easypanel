@@ -8,7 +8,7 @@
               <li v-for="item in node.topics" :key="item.title">
                 <g-link class="topic" :to="'/' + item.slug">{{item.title}}</g-link>
                 <ul class="nested-list" v-if="checkAnchors(node.slug, item.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
-                  <li v-for="heading in node.headings" :key="heading.value">
+                  <li v-for="heading in filterHeadings(node.headings)" :key="heading.value">
                     <a class="sub-topic" :href="'/' + item.slug + heading.anchor">{{heading.value}}</a>
                   </li>
                 </ul>
@@ -39,6 +39,7 @@ query Menu {
       node {
         slug
         headings {
+          depth
           value
           anchor
         }
@@ -73,6 +74,11 @@ export default {
       } else {
         this.$store.commit('openSidebar')
       }
+    },
+    filterHeadings(headings) {
+      return headings.filter( h => {
+        return h.depth < 3
+      })
     },
     sidebarScroll: function() {
       let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
