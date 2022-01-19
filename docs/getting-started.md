@@ -3,7 +3,9 @@ title: Getting started
 date: 2022-01-18 18:06:34
 slug: getting-started
 ---
-
+- [What is EasyPanel](#what-is-easypanel)
+- [Installation](#installation)
+    
 ## What is EasyPanel
 
 EasyPanel is a fully customizable and beautiful CRUD maker for admin panel in [Laravel](https://laravel.com) based on [Livewire](https://laravel-livewire.com).

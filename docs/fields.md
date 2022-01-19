@@ -37,8 +37,9 @@ public function fields(){
 
 With this simple array, it will call `name` and `email` property on CRUD's model.
 Let's see what is happening in behind scene:
-```
+```php
 $user->name
+
 $user->email
 ```
 
