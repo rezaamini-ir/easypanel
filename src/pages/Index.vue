@@ -1,14 +1,13 @@
 <template>
   <Layout :sidebar="true">
     <div class="content">
-      <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
       <nav>
         <!-- To use other icons here, you need to import them in the Shortcut component -->
-        <Shortcut link="/getting-started" text="Introduction" icon="play-icon" />
-        <Shortcut link="/theme-configuration" text="Configuration" icon="sliders-icon" />
-        <Shortcut link="/theme-configuration#changing-colors" text="Change colors" icon="eye-icon" />
+        <h1>EasyPanel</h1>
       </nav>
-      <GitLink class="git" size="large" />
+      <div style="display: flex; justify-content: center">
+        <GitLink class="git" size="large" />
+      </div>
     </div>
   </Layout>
 </template>
@@ -31,14 +30,14 @@ export default {
   },
   data() {
     return {
-      description: 'The ultimate static generated documentation theme for the JAM-stack'
+      description: 'EasyPanel is a beautiful, customizable and flexible admin panel creator based on Livewire for Laravel.'
     }
   },
   metaInfo() {
     return {
-      title: this.description,
+      title: "Laravel EasyPanel",
       meta: [
-        { key: 'description', name: 'description', content: 'A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click.' }
+        { key: 'description', name: 'description', content: 'EasyPanel is a beautiful, customizable and flexible admin panel creator based on Livewire for Laravel.' }
       ]
     }
   }
@@ -46,18 +45,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .content {
   display: flex;
   flex-direction: column;
 }
+
 h1 {
-  text-align: center;
   max-width: 600px;
-  margin: 1.5em auto 1.5em;
   @include respond-above(md) {
     max-width: 1000px;
   }
 }
+
+
+
 h2 {
   font-size: 1.4rem;
   margin: 0;
