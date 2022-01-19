@@ -6,19 +6,36 @@
         {
           "title": "Getting started",
           "slug": "getting-started"
+        },
+        {
+          "title": "Manage Administrators",
+          "slug": "manage-administrators"
         }
       ]
     },
     {
-      "section": "Setup",
+      "section": "CRUD Settings",
       "topics": [
         {
-          "title": "Theme configuration",
-          "slug": "theme-configuration"
+          "title": "Component Structure",
+          "slug": "component-structure"
         },
         {
-          "title": "Forestry CMS",
-          "slug": "forestry-cms"
+          "title": "Inputs",
+          "slug": "inputs"
+        },
+        {
+          "title": "Fields",
+          "slug": "fields"
+        }
+      ]
+    },
+    {
+      "section": "Configuration",
+      "topics": [
+        {
+          "title": "Configuration",
+          "slug": "configuration"
         }
       ]
     }
