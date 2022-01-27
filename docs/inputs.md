@@ -131,7 +131,7 @@ Livewire has 3 different mode for its inputs:
 
 - wire:model
 - wire:model.lazy
-- wire:model.deffer
+- wire:model.defer
 
 And you can create your inputs based on your needs, for example you want to use different modes for each input you can do it easy:
 
@@ -139,10 +139,13 @@ And you can create your inputs based on your needs, for example you want to use 
 public function inputs(){
     return [
         'expired_at' => Datetime::label('Expiration time')
-                        ->lazyMode(), // it will use wire:model.lazy in input
+                        ->lazyMode(), // it will use wire:model.lazy for input
         
         'name' => Text::label('Name')
-                    ->defferMode() // it will use wire:model.deffer in input
+                    ->deferMode(), // it will use wire:model.defer for input
+                    
+        'email' => Email::label('email')
+                    ->normalMode() // it will use wire:model for input
     ];
 } 
 ```
