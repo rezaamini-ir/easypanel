@@ -8,6 +8,7 @@ slug: fields
   - [Relational Fields](#relational-fields)
 - [Control Your Fields](#control-your-fields)
   - [Custom Style](#custom-style)
+  - [Sortable fields](#sortable-fields)
   - [Images](#images)
     - [Clickable Images](#clickable-images)
     - [Rounded Images](#rounded-images)
@@ -90,6 +91,17 @@ You can manage the style of values in table with `style()` method.
  public function fields(){
     return [
         'title' => Field::title('Title of article')->style('font-20 text-danger'),
+    ];
+}
+```
+
+### Sortable fields
+In default, none-relational fields have sorting option, but if you want to turn it off for a dedicated field, you can easily use `withoutSorting()` method on Field object:
+
+```php
+public function fields(){
+    return [
+        'title' => Field::title('Title of article')->withoutSorting(),
     ];
 }
 ```
