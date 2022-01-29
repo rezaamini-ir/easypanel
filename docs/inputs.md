@@ -10,6 +10,7 @@ slug: inputs
     - [Text](#text)
     - [Placeholder](#placeholder)
     - [Input custom style](#input-custom-style)
+    - [Label styles](#label-styles)
     - [Autocomplete input](#autocomplete-input)
     - [Input Mode](#input-mode)
 
@@ -94,6 +95,19 @@ public function inputs(){
     return [
         'title' => Text::label('Title of Article')
             ->inputStyle('border border-primary')
+    ];
+} 
+```
+
+### Label styles
+
+With `labelStyle()` you will be able to apply some custom classes to the `<label>` tag.
+
+```php
+public function inputs(){
+    return [
+        'title' => Text::label('Title of Article')
+            ->labelStyle('text-warning font-20')
     ];
 } 
 ```
