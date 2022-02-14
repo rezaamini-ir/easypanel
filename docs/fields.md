@@ -16,6 +16,9 @@ slug: fields
     - [Alt of Images](#alt-of-images)
   - [Badges](#badges)
     - [Rounded Badges](#rounded-badges)
+    - [Boolean Badges](#boolean-badges)
+      - [True/False Values in Badges](#truefalse-values-in-badges)
+      - [True/False Colors in Badges](#truefalse-colors-in-badges)
     - [Badge Color](#badge-color)
 
 ## What is field
@@ -224,6 +227,66 @@ public function fields(){
     ];
 }
 ```
+
+
+### Boolean Badges
+If you have a boolean value in your DataBase you can use `asBooleanBadge` instead of `asBadge` method:
+
+```php
+public function fields(){
+    return [
+        'is_admin' => Field::title('Is Administrator?')
+                ->asBooleanBadge(),
+    ];
+}
+```
+
+It will accept 2 parameters, which are the type of true and false colors.
+
+```php
+public function fields(){
+    return [
+        'is_admin' => Field::title('Is Administrator?')
+                ->asBooleanBadge(trueColor: 'success', falseColor: 'danger'),
+    ];
+}
+```
+`success` will be used for `true` styles, and `danger` will be used for `false` values.
+You can use [Badge Color](#badge-color) section for more detail.
+
+#### True/False Values in Badges
+In default when you use `asBooleanBadge` it uses `True !` and `False !` texts in your view, but it is fully customizable and translatable.
+
+```php
+public function fields(){
+    return [
+        'is_admin' => Field::title('Is Administrator?')
+                ->asBooleanBadge()
+                ->trueValue('Yessss :)')
+                ->falseValue('Nope :('),
+    ];
+}
+```
+With these 2 methods you can change your `boolean` texts, when the `is_admin` has a true value it will show you the `Yessss :)` and when it is false it will show you `Nope :(`.
+
+These values will be written in your translation files!
+
+#### True/False Colors in Badges
+As we said before, you can pass your colors straightly into `asBooleanBadge` method, but if you are not so into this one, you can use `trueColor()` and `falseColor()` method to set the styles.
+
+```php
+public function fields(){
+    return [
+        'is_admin' => Field::title('Is Administrator?')
+                ->asBooleanBadge()
+                ->trueColor('primary')
+                ->falseColor('warning'),
+    ];
+}
+```
+
+Now it uses `badge badge-primary` class for `true` value and `badge badge-warning` for `false` values.
+
 
 ### Badge Color
 Badges in EasyPanel are based on [Bootstrap](https://getbootstrap.com/docs/4.0/components/badge/) styles, and they can have about 8 colors:
