@@ -5,7 +5,7 @@ slug: getting-started
 ---
 - [What is EasyPanel](#what-is-easypanel)
 - [Installation](#installation)
-    
+
 ## What is EasyPanel
 
 EasyPanel is a fully customizable and beautiful CRUD maker for admin panel in [Laravel](https://laravel.com) based on [Livewire](https://laravel-livewire.com).
@@ -19,13 +19,13 @@ To install EasyPanel on your Laravel project you need to pass a few steps.
 composer require rezaamini-ir/laravel-easypanel
 ```
 
-2- Publish package files and create tables using Artisan command:
+2- Publish package files and create tables using the Artisan command:
 
 ```shell
 php artisan panel:install
 ```
 
-With executing this command, Laravel publishes some config and customizable files into your project directory.
+By executing this command, Laravel publishes some config and customizable files into your project directory.
 
 One of these files is `config/easypanel.php` which is package configuration, and You can manage this file based on your needs!
 

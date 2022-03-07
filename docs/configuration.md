@@ -22,7 +22,7 @@ slug: configuration
 When you run `panel:install` command, it will publish the config file in `config/easy_panel.php` path, and You can manage it easily.
 
 ### Disable/Enable Module
-It's possible to disable or enable whole module easily by just changing the `enable` key in config file.
+It's possible to disable or enable the whole module easily by just changing the `enable` key in the config file.
 ```php 
 return [
     ...
@@ -46,11 +46,11 @@ return [
 ## Changing Language
 EasyPanel is fully translatable, to manage the values and texts, You can copy the `resources/lang/en_panel.json` file and customize the texts.
 
-For example if You want to add a `france` language to EasyPanel, You have to create a copy from `resources/lang/en_panel.json` into `resources/lang/fr_panel.json`, now You can set the value of `lang` to `fr`.
+For example, if You want to add a `france` language to EasyPanel, You have to create a copy from `resources/lang/en_panel.json` into `resources/lang/fr_panel.json`, now You can set the value of `lang` to `fr`.
 
-Don't need to pass full name of file, just pass the prefix before `_panel.json`
+Don't need to pass the full name of the file, just pass the prefix before `_panel.json`
 
-The pattern is: `*_panel.json`: 
+The pattern is: `*_panel.json`:
 
 - fa_panel.json => fa
 - en_panel.json => en
@@ -66,7 +66,7 @@ return [
 
 ### User Model
 
-EasyPanel to manage admins uses default `User` Model, if You want to change it, You can pass new model into `user_model` config key.
+EasyPanel to manage admins uses the default `User` Model, if You want to change it, You can pass the new model into `user_model` config key.
 
 ```php 
 return [
@@ -78,7 +78,7 @@ return [
 
 ### Authentication Guard
 
-In default EasyPanel uses the `web` guard to identify the logged-in user.
+By default, EasyPanel uses the `web` guard to identify the logged-in user.
 
 If you have customized this, or You need to change the guard for authentication, You have to change `auth_guard` in config:
 
@@ -93,7 +93,7 @@ return [
 
 ### Unauthorized Redirect Path
 
-If an unauthorized user tries to access the EasyPanel routes, it will be redirected to a path, and this path can be changed in config file with `redirect_unauthorized` key.
+If an unauthorized user tries to access the EasyPanel routes, it will be redirected to a path, and this path can be changed in the config file with `redirect_unauthorized` key.
 
 ```php 
 return [
@@ -105,9 +105,9 @@ return [
 
 ### Routes Prefix
 
-In default, EasyPanel uses `/admin` prefix, and You can access the routes by : `localhost:8000/admin`.
+In default, EasyPanel uses `/admin` prefix, and You can access the routes by: `localhost:8000/admin`.
 
-As you may guess, It's fully customizable in config file:
+As you may guess, It's fully customizable in the config file:
 
 ```php 
 return [
@@ -131,7 +131,7 @@ return [
 
 ### Pagination Count
 
-The Read page has a pagination, and You can customize the count of pagination in the config.
+The Read page has pagination, and You can customize the count of pagination in the config.
 
 The default is 20, and You can change it:
 ```php 
@@ -144,9 +144,9 @@ return [
 
 ### Lazy Updating
 
-Lazy mode uses `wire:model.lazy` in searching strategy, and inputs instead of `wire:model`.
+The lazy mode uses `wire:model.lazy` in searching strategy, and inputs instead of `wire:model`.
 
-[Read more about lazy updating](https://laravel-livewire.com/docs/2.x/properties#lazy-updating). 
+[Read more about lazy updating](https://laravel-livewire.com/docs/2.x/properties#lazy-updating).
 
 ```php 
 return [
@@ -162,7 +162,7 @@ return [
 
 Admin Identifier class uses a Facade, and You can change the base class very easily.
 
-For example, if You want to change strategy of identifying administrators, You can create a class with a public `check($id)` method:
+For example, if You want to change the strategy of identifying administrators, You can create a class with a public `check($id)` method:
 
 ```php
 namespace App\Services\Auth;
@@ -190,7 +190,7 @@ return [
 
 Admin Provider class also uses a Facade, and You can swap the class.
 
-If you need to customize the way of creating an administrator, delete an administrator or administrator lists, You have to create a custom class and change the value of `admin_provider_class` to new class.
+If you need to customize the way of creating an administrator, delete an administrator or administrator list, You have to create a custom class and change the value of `admin_provider_class` to the new class.
 
 This class must have 4 methods called:
 

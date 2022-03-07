@@ -11,12 +11,12 @@ slug: manage-administrators
 
 ## Authentication Strategy
 
-There is no login or registration page to logging in to your account, so to access the `/admin` route, first you have to login into your account in the way which you want.
-Then define a user as administrator to access the EasyPanel route.
+There is no login or registration page to log in to your account, so to access the `/admin` route, first, you have to login into your account in the way which you want.
+Then define a user as an administrator to access the EasyPanel route.
 
 ## Create an Administrator
 
-To define a user as administrator you have to execute this command:
+To define a user as an administrator you have to execute this command:
 ```shell
 php artisan panel:add [user_id]
 ```
@@ -36,16 +36,16 @@ php artisan panel:remove [user_id]
 ```
 
 Hint: `[user_id]` : It's the
-ID of user that you want to make as an admin.
+The ID of a user that you want to make as an admin.
 
 ## Admin List
 
-You can see the list of administrators in command line easily:
+You can see the list of administrators in the command line easily:
 ```shell
 php artisan panel:admins
 ```
-It will show the list of administrators in command line.
+It will show the list of administrators in the command line.
 
-**These commands use UserProvider class in EasyPanel, and You can use your own class instead of that and pass it in config file.**
+**These commands use UserProvider class in EasyPanel, and You can use your class instead of that and pass it in the config file.**
 
 If you want to change this class, read [Admin Provider Class](/configuration#admin-provider-class) section.

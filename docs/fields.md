@@ -3,7 +3,7 @@ title: Fields
 date: 2022-01-19 13:26:00
 slug: fields
 ---
-- [What is field](#what-is-field)
+- [What is a field](#what-is-a-field)
 - [Define Simple Fields](#define-simple-fields)
   - [Relational Fields](#relational-fields)
 - [Control Your Fields](#control-your-fields)
@@ -21,11 +21,11 @@ slug: fields
       - [True/False Colors in Badges](#truefalse-colors-in-badges)
     - [Badge Color](#badge-color)
 
-## What is field
-Fields are the data which have been showed in Read page!
+## What is a field
+Fields are the data that have been shown on the Read page!
 
 ## Define simple fields
-To define the data which you want to be showed in Read page you have to manage `fields()` method on CRUD component.
+To define the data which you want to be shown on the Read page you have to manage `fields()` method on the CRUD component.
 
 This method must return an array!
 
@@ -40,17 +40,17 @@ public function fields(){
 ```
 
 With this simple array, it will call `name` and `email` property on CRUD's model.
-Let's see what is happening in behind scene:
+Let's see what is happening behind the scene:
 ```php
 $user->name
 
 $user->email
 ```
 
-**These are the properties which are available on your model, be careful!**
+**These are the properties that are available on your model, be careful!**
 
 ### Relational Fields
-To call a relational value on your model, first you need to define them in your model.
+To call a relational value on your model, first, you need to define them in your model.
 Then you can call them in `fields()` method with just a point separator.
 
 Image our model is `Article` and we have defined a `belongsTo()` relation on model class called `user`, now we can do something like this to get the name of user:
@@ -71,10 +71,10 @@ $article->user->name
 ## Control Your Fields
 You may want to create more customizable fields, and add some style to them to make them more beautiful and readable.
 how can You do it? Should You open the rendered CRUD files and change them in what way You want?
-You it works, but after rebuilding each CRUD these changes will go away, and also they take lots of time!
+It works, but after rebuilding each CRUD these changes will go away, and also they take lots of time!
 
 There is a class called `Field` which has been imported in your CRUD components class with this namespace: `EasyPanel\Parsers\Fields\Field`.
-With this class we will be able to make your fields more customizable.
+With this class, we will be able to make your fields more customizable.
 
 Let's see an example:
 ```php
@@ -84,9 +84,9 @@ Let's see an example:
     ];
 }
 ```
-The key of array is your property on model, and the value is an object of `Field::class` and you have to call the `title()` method first!
+The key of the array is your property on the model, and the value is an object of `Field::class` and you have to call the `title()` method first!
 
-The `title` is one of the title in your Read table.
+The `title` is one of the titles in your Read table.
 
 ### Custom Style
 You can manage the style of values in table with `style()` method.
@@ -99,7 +99,7 @@ You can manage the style of values in table with `style()` method.
 ```
 
 ### Sortable fields
-In default, none-relational fields have sorting option, but if you want to turn it off for a dedicated field, you can easily use `withoutSorting()` method on Field object:
+In default, non-relational fields have a sorting option, but if you want to turn it off for a dedicated field, you can easily use `withoutSorting()` method on the Field object:
 
 ```php
 public function fields(){
@@ -113,7 +113,7 @@ This code will add the `class='font-20 text-danger'` attribute to each value of 
 
 ![](/style-example.png)
 
-**This style is appended to table values not the head of table!**
+**This style is appended to table values not the head of the table!**
 
 ## Images
 This `Field` class allows you to work with images to make them customizable.
@@ -142,7 +142,7 @@ public function fields(){
 }
 ```
 
-Also, this `clickableImage` method accepts a parameter which is the target of link and in default it is `_blank`
+Also, this `clickableImage` method accepts a parameter that is the target of the link and in default, it is `_blank`
 
 ```php
 public function fields(){
@@ -166,10 +166,10 @@ public function fields(){
 }
 ```
 
-In behind scene, it adds `rounded-circle` class to the image.
+In the behind scene, it adds `rounded-circle` class to the image.
 
 ### Width and Height
-You may need to change the `width` and `height` of image to show them more clearly in Read page.
+You may need to change the `width` and `height` of the image to show them more clearly on the Read page.
 It is simpler than you think, just add `width()` or `height()` method and pass them an integer for pixel!
 
 ```php
@@ -183,7 +183,7 @@ public function fields(){
     ];
 }
 ```
-In default, the width and height are 50px.
+By default, the width and height are 50px.
 
 ### Alt of Images
 Images are more customizable than you think!
@@ -199,12 +199,12 @@ public function fields(){
     ];
 }
 ```
-**You can use the relational mode for these custom fields, like simple mode**
+**You can use the relational model for these custom fields, like simple mode**
 
 ## Badges
 A badge can make your UI much better, you can change the type of your value from simple text to a badge.
 
-Imagine we have a model like `Article` with a `belongsTo` relation called `user`, and want to show the name of article creator in a beautiful badge:
+Imagine we have a model like `Article` with a `belongsTo` relation called `user`, and want to show the name of the article creator in a beautiful badge:
 
 ```php
 public function fields(){
@@ -267,12 +267,12 @@ public function fields(){
     ];
 }
 ```
-With these 2 methods you can change your `boolean` texts, when the `is_admin` has a true value it will show you the `Yessss :)` and when it is false it will show you `Nope :(`.
+With these 2 methods, you can change your `boolean` texts, when the `is_admin` has a true value it will show you the `Yessss :)` and when it is false it will show you `Nope :(`.
 
 These values will be written in your translation files!
 
 #### True/False Colors in Badges
-As we said before, you can pass your colors straightly into `asBooleanBadge` method, but if you are not so into this one, you can use `trueColor()` and `falseColor()` method to set the styles.
+As we said before, you can pass your colors straightly into `asBooleanBadge` method, but if you are not so into this one, you can use `trueColor()` and `falseColor()` methods to set the styles.
 
 ```php
 public function fields(){
@@ -310,4 +310,4 @@ public function fields(){
 }
 ```
 
-**After any change, component needs to be rebuilt!**
+**After any change, the component needs to be rebuilt!**

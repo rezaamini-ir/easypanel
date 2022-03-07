@@ -5,14 +5,14 @@ slug: inputs
 ---
 - [Provide Inputs](#provide-inputs)
 - [Simple inputs](#provide-inputs)
-    - [Available Types](#available-types)
+  - [Available Types](#available-types)
 - [Inputs, but pro!](#inputs-but-pro)
-    - [Text](#text)
-    - [Placeholder](#placeholder)
-    - [Input custom style](#input-custom-style)
-    - [Label styles](#label-styles)
-    - [Autocomplete input](#autocomplete-input)
-    - [Input Mode](#input-mode)
+  - [Text](#text)
+  - [Placeholder](#placeholder)
+  - [Input custom style](#input-custom-style)
+  - [Label styles](#label-styles)
+  - [Autocomplete input](#autocomplete-input)
+  - [Input Mode](#input-mode)
 
 ## Provide Inputs
 
@@ -45,7 +45,7 @@ public function inputs(){
 
 ```
 
-And that's it! This code will generate a simple form which includes 4 inputs.
+And that's it! This code will generate a simple form that includes 4 inputs.
 
 #### Available types
 
@@ -64,7 +64,7 @@ And that's it! This code will generate a simple form which includes 4 inputs.
 
 
 ## Inputs, but pro!
-You can create inputs as simple as possible as you want, but there is more customizibility to make more better inputs!
+You can create inputs as simple as possible as you want, but there is more customizability to make better inputs!
 
 **All of these inputs have `EasyPanel\Parsers\HTMLInputs` namespace and start with label() method as a static method**
 
@@ -141,13 +141,13 @@ public function inputs(){
 
 ### Input Mode
 
-Livewire has 3 different mode for its inputs:
+Livewire has 3 different modes for its inputs:
 
 - wire:model
 - wire:model.lazy
 - wire:model.defer
 
-And you can create your inputs based on your needs, for example you want to use different modes for each input you can do it easy:
+And you can create your inputs based on your needs, for example, you want to use different modes for each input you can do it easy:
 
 ```php
 public function inputs(){
@@ -164,7 +164,7 @@ public function inputs(){
 } 
 ```
 
-**If you don't pass anything, it will decide based on your config file and `easy_panel.lazy_mode` key, if it is `true` all of inputs will render by `wire:model.lazy` and if it is `false` all of them will render by `wire:model`.**
+**If you don't pass anything, it will decide based on your config file and `easy_panel.lazy_mode` key, if it is `true` all of the inputs will render by `wire:model.lazy` and if it is `false` all of them will render by `wire:model`.**
 
 ##### Input classes list:
 - `EasyPanel\Parsers\HTMLInputs\Text`
